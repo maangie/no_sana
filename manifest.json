@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Takaichi → Cat",
+  "version": "1.0",
+  "description": "高市早苗氏の画像を猫の画像に置き換えます",
+  "permissions": [],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
