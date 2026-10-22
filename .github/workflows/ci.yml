@@ -1,0 +1,17 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: manifest.json の確認
+        run: node -e 'JSON.parse(require("fs").readFileSync("manifest.json", "utf8"))'
+      - name: content.js の構文確認
+        run: node --check content.js
